@@ -47,12 +47,13 @@ router.post('/registro', (request, response) => {
         ap_paterno,
         ap_materno,
         correo,
-        pass
+        pass,
+        tipo_sistema
     } = request.body;
 
-    const sql = `INSERT INTO usuarios(nombre, ap_paterno, ap_materno, correo, pass) VALUES (?,?,?,?,?)`;
+    const sql = `INSERT INTO usuarios(nombre, ap_paterno, ap_materno, correo, pass, tipo_sistema) VALUES (?,?,?,?,?,?)`;
 
-    const values = [ nombre, ap_paterno, ap_materno, correo, pass ];
+    const values = [ nombre, ap_paterno, ap_materno, correo, pass, tipo_sistema];
 
     connection.query(sql, values, ( error, result ) => {
         if (error) response.status(200).json({ error: true, status: 500, message: error.message });
