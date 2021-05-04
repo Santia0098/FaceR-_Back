@@ -33,6 +33,8 @@ router.post('/login', (request, response) => {
     connection.end();
 });
 
+
+
 router.post('/registro', (request, response) => {
     connection = getConnection();
     connection.connect( error => { 
