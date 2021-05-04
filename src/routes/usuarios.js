@@ -3,6 +3,7 @@ const getConnection = require('../config/database');
 const router = express.Router();
 
 
+
 router.post('/login', (request, response) => {
     connection = getConnection();
     connection.connect( error => { 
@@ -32,6 +33,8 @@ router.post('/login', (request, response) => {
     });
     connection.end();
 });
+
+
 
 router.post('/registro', (request, response) => {
     connection = getConnection();
