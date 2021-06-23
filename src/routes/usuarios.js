@@ -18,6 +18,9 @@ router.post('/login', (request, response) => {
         pass
     } = request.body;
 
+    console.log(correo);
+    console.log(pass);
+
     const sql = `SELECT *  FROM usuarios
     WHERE correo = ? AND pass = ?`;
 
@@ -50,13 +53,12 @@ router.post('/registro', (request, response) => {
         ap_paterno,
         ap_materno,
         correo,
-        pass,
-        tipo_sistema
+        pass
     } = request.body;
 
-    const sql = `INSERT INTO usuarios(nombre, ap_paterno, ap_materno, correo, pass, tipo_sistema) VALUES (?,?,?,?,?,?)`;
+    const sql = `INSERT INTO usuarios(nombre, ap_paterno, ap_materno, correo, pass) VALUES (?,?,?,?,?)`;
 
-    const values = [ nombre, ap_paterno, ap_materno, correo, pass, tipo_sistema];
+    const values = [ nombre, ap_paterno, ap_materno, correo, pass];
 
     connection.query(sql, values, ( error, result ) => {
         if (error) response.status(200).json({ error: true, status: 500, message: error.message });

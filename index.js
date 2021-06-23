@@ -17,6 +17,8 @@ app.get('/', (req, res) => {
     res.send('mai eipiei');
 });
 
+process.env.PORT = process.env.PORT || 3005;
+
 
 app.listen(process.env.PORT, () => {
     console.log('Escuchando puerto: ', process.env.PORT);
