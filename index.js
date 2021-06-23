@@ -10,6 +10,7 @@ app.use(cors());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(require('./src/routes/main'))
 
 app.get('/', (req, res) => {
     res.send('mai eipiei');
