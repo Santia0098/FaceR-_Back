@@ -1,9 +1,9 @@
-const express = require('express');
-const app = express();
+// const express = require('express');
+// const app = express();
 
-const usuarios = require('./usuarios');
+// const usuarios = require('./usuarios');
 
-app.use('/usuarios', usuarios);
+// app.use('/usuarios', usuarios);
 
 
-module.exports = app;
+// module.exports = app;
